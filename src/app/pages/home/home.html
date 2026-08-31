@@ -1,0 +1,10 @@
+
+<form formGroupName="forma">
+
+    <mat-form-field appearance="outline"  >
+        <mat-label>escreve ai</mat-label>
+        <input matInput formControlName="idoi"/>
+        <mat-error *ngIf="forma.get('idoi')?.hasError('maxLenght')">burro q so uai</mat-error>
+    </mat-form-field>
+    
+</form>

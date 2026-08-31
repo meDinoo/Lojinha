@@ -1,0 +1,38 @@
+<head>
+
+</head>
+
+<body>
+    <span>
+        <img />
+    </span>
+    <form  [formGroup]="form" class="form">
+        <mat-form-field>
+            <mat-label>email: </mat-label>
+            <input type="email" matInput formControlName="email" />
+            <mat-error>Obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>senha: </mat-label>
+            <input type="password" matInput formControlName="senha">
+
+            @if (form.get('senha')?.hasError('required')) {
+            <mat-error>A senha é obrigatória.</mat-error>
+            }
+
+            @if (form.get('senha')?.hasError('minlength')) {
+            <mat-error>A senha deve ter no mínimo 5 caracteres.</mat-error>
+            }
+        </mat-form-field>
+        <div>
+            <a href="senha">esqueci minha senha!</a>
+            <br />
+            <a href="cadastro">criar conta</a>
+        </div>
+
+        <div>
+            <button matButton="elevated"  [disabled]="this.form.hasError"> entrar</button>
+        </div>
+
+    </form>
+</body>
