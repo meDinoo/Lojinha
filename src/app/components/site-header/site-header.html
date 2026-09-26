@@ -1,0 +1,30 @@
+<header class="shop-header">
+    <div class="header-main">
+        <a class="shop-brand" routerLink="/" aria-label="TPG Discos — início">
+            <span class="brand-mark" aria-hidden="true">♫</span>
+            <span>TPG <strong>Discos</strong></span>
+        </a>
+
+        <form class="search-form" role="search" (submit)="search(searchInput.value, $event)">
+            <input
+                #searchInput
+                id="site-search"
+                type="search"
+                placeholder="Pesquisar..."
+                aria-label="Pesquisar na loja"
+            />
+            <button type="submit" aria-label="Buscar">Buscar</button>
+        </form>
+
+        <div class="account-links">
+            <a routerLink="/login">Entrar</a>
+            <a class="signup-link" routerLink="/cadastro">Criar conta</a>
+        </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Menu principal">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Início</a>
+        <a routerLink="/pesquisa" routerLinkActive="active">Discos</a>
+        <a routerLink="/carrinho" routerLinkActive="active">Carrinho</a>
+    </nav>
+</header>

@@ -54,6 +54,14 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
+## Reutilizando o cabeçalho da loja
+
+O cabeçalho reutilizável da TPG Discos está em `src/app/components/site-header/`. Ele contém a marca, o campo de pesquisa, os links de conta e o menu principal. O componente raiz exibe o cabeçalho em todas as rotas por padrão.
+
+Para adicionar uma página, crie o componente e registre a rota em `src/app/app.routes.ts`. O cabeçalho aparecerá automaticamente. Para ocultá-lo em uma página, adicione `data: { hideSiteHeader: true }` à rota, como já foi feito em `cadastro` e `senha`.
+
+Ao adicionar ou renomear uma página da loja, atualize os links do menu em `site-header.html`. A pesquisa navega para `/pesquisa` e envia o termo digitado no parâmetro `q` da URL.
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

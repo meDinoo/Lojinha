@@ -1,23 +1,31 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatButton } from '@angular/material/button';
-import { MatError, MatFormField, MatInput, MatLabel } from "@angular/material/input";
+import { Component, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [MatFormField, MatInput, MatLabel, MatButton, MatError, ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })
 export class Login {
- public form: FormGroup
- public fb:FormBuilder
- constructor( formbuilder:FormBuilder) {
-  
-  this.fb = formbuilder;
-  this.form = this.fb.group({
-    email:['', [Validators.required, Validators.email]],
-    senha:['',[ Validators.required, Validators.minLength(5)]]
-  })
- }
+  private readonly formBuilder = inject(FormBuilder);
+  readonly form = this.formBuilder.group({
+    email: ['', [Validators.required, Validators.email]],
+    senha: ['', [Validators.required, Validators.minLength(8)]],
+  });
+  submitted = false;
+  successMessage = '';
+
+  onSubmit(): void {
+    this.submitted = true;
+    this.successMessage = '';
+
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+
+    this.successMessage = 'Tudo certo! O login poderá ser conectado ao sistema da loja.';
+  }
 }

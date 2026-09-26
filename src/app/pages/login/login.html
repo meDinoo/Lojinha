@@ -1,38 +1,64 @@
-<head>
+<main class="auth-page">
+    <section class="auth-layout" aria-labelledby="page-title">
+        <div class="form-panel">
+            <div class="form-heading">
+                <h2 id="page-title">Entrar na conta</h2>
+                <p>A saudade do seu próximo disco acaba aqui.</p>
+            </div>
 
-</head>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+                <div class="field">
+                    <label for="login-email">E-mail</label>
+                    <input
+                        id="login-email"
+                        type="email"
+                        formControlName="email"
+                        autocomplete="email"
+                        placeholder="voce@exemplo.com"
+                        [attr.aria-invalid]="form.controls.email.invalid && form.controls.email.touched"
+                        aria-describedby="login-email-error"
+                    />
 
-<body>
-    <span>
-        <img />
-    </span>
-    <form  [formGroup]="form" class="form">
-        <mat-form-field>
-            <mat-label>email: </mat-label>
-            <input type="email" matInput formControlName="email" />
-            <mat-error>Obrigatório</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>senha: </mat-label>
-            <input type="password" matInput formControlName="senha">
+                    @if (form.controls.email.touched && form.controls.email.hasError('required')) {
+                        <span class="field-error" id="login-email-error">Informe seu e-mail.</span>
+                    } @else if (form.controls.email.touched && form.controls.email.hasError('email')) {
+                        <span class="field-error" id="login-email-error">Digite um e-mail válido.</span>
+                    }
+                </div>
 
-            @if (form.get('senha')?.hasError('required')) {
-            <mat-error>A senha é obrigatória.</mat-error>
-            }
+                <div class="field">
+                    <div class="label-row">
+                        <label for="login-password">Senha</label>
+                        <a routerLink="/senha">Esqueci a senha</a>
+                    </div>
+                    <input
+                        id="login-password"
+                        type="password"
+                        formControlName="senha"
+                        autocomplete="current-password"
+                        placeholder="Digite sua senha"
+                        [attr.aria-invalid]="form.controls.senha.invalid && form.controls.senha.touched"
+                        aria-describedby="login-password-error"
+                    />
 
-            @if (form.get('senha')?.hasError('minlength')) {
-            <mat-error>A senha deve ter no mínimo 5 caracteres.</mat-error>
-            }
-        </mat-form-field>
-        <div>
-            <a href="senha">esqueci minha senha!</a>
-            <br />
-            <a href="cadastro">criar conta</a>
+                    @if (form.controls.senha.touched && form.controls.senha.hasError('required')) {
+                        <span class="field-error" id="login-password-error">Informe sua senha.</span>
+                    } @else if (form.controls.senha.touched && form.controls.senha.hasError('minlength')) {
+                        <span class="field-error" id="login-password-error">A senha deve ter pelo menos 8 caracteres.</span>
+                    }
+                </div>
+
+                <button class="submit-button" type="submit">
+                    Entrar <span aria-hidden="true">→</span>
+                </button>
+
+                @if (successMessage) {
+                    <p class="success-message" role="status">{{ successMessage }}</p>
+                }
+            </form>
+
+            <p class="switch-prompt">Primeira vez por aqui? <a routerLink="/cadastro">Criar minha conta</a></p>
         </div>
-
-        <div>
-            <button matButton="elevated"  [disabled]="this.form.hasError"> entrar</button>
-        </div>
-
-    </form>
-</body>
+    </section>
+    <footer class="page-footer">© 2026 TPG Discos</footer>
+</main>

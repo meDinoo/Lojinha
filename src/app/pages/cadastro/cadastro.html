@@ -1,1 +1,114 @@
-<p>cadastro works!</p>
+<main class="auth-page">
+	<header class="site-header">
+		<a class="brand" routerLink="/login" aria-label="TPG Discos — página de login">
+			<span>TPG <strong>Discos</strong></span>
+		</a>
+		<a class="header-link" routerLink="/login">Já tem uma conta? <strong>Entrar</strong></a>
+	</header>
+
+	<section class="auth-layout" aria-labelledby="page-title">
+		<div class="form-panel">
+			<div class="form-heading">
+				<h2 id="page-title">Criar conta</h2>
+				<p>É rapidinho. Só precisamos de alguns dados.</p>
+			</div>
+
+			<form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+				<div class="field">
+					<label for="signup-name">Nome completo</label>
+					<input
+						id="signup-name"
+						type="text"
+						formControlName="nome"
+						autocomplete="name"
+						placeholder="Como podemos te chamar?"
+						[attr.aria-invalid]="form.controls.nome.invalid && form.controls.nome.touched"
+						aria-describedby="signup-name-error"
+					/>
+
+					@if (form.controls.nome.touched && form.controls.nome.hasError('required')) {
+						<span class="field-error" id="signup-name-error">Informe seu nome.</span>
+					} @else if (form.controls.nome.touched && form.controls.nome.hasError('minlength')) {
+						<span class="field-error" id="signup-name-error">
+							Seu nome precisa ter pelo menos 2 caracteres.
+						</span>
+					}
+				</div>
+
+				<div class="field">
+					<label for="signup-email">E-mail</label>
+					<input
+						id="signup-email"
+						type="email"
+						formControlName="email"
+						autocomplete="email"
+						placeholder="voce@exemplo.com"
+						[attr.aria-invalid]="form.controls.email.invalid && form.controls.email.touched"
+						aria-describedby="signup-email-error"
+					/>
+
+					@if (form.controls.email.touched && form.controls.email.hasError('required')) {
+						<span class="field-error" id="signup-email-error">Informe seu e-mail.</span>
+					} @else if (form.controls.email.touched && form.controls.email.hasError('email')) {
+						<span class="field-error" id="signup-email-error">Digite um e-mail válido.</span>
+					}
+				</div>
+
+				<div class="field">
+					<label for="signup-password">Senha</label>
+					<input
+						id="signup-password"
+						type="password"
+						formControlName="senha"
+						autocomplete="new-password"
+						placeholder="Pelo menos 8 caracteres"
+						[attr.aria-invalid]="form.controls.senha.invalid && form.controls.senha.touched"
+						aria-describedby="signup-password-error"
+					/>
+
+					@if (form.controls.senha.touched && form.controls.senha.hasError('required')) {
+						<span class="field-error" id="signup-password-error">Crie uma senha.</span>
+					} @else if (form.controls.senha.touched && form.controls.senha.hasError('minlength')) {
+						<span class="field-error" id="signup-password-error">
+							A senha deve ter pelo menos 8 caracteres.
+						</span>
+					}
+				</div>
+
+				<div class="field">
+					<label for="signup-confirm-password">Confirme sua senha</label>
+					<input
+						id="signup-confirm-password"
+						type="password"
+						formControlName="confirmarSenha"
+						autocomplete="new-password"
+						placeholder="Digite a senha novamente"
+						[attr.aria-invalid]="
+							(form.controls.confirmarSenha.touched && form.controls.confirmarSenha.invalid) ||
+							(form.hasError('passwordsMismatch') && form.controls.confirmarSenha.touched)
+						"
+						aria-describedby="signup-confirm-error"
+					/>
+
+					@if (form.controls.confirmarSenha.touched && form.controls.confirmarSenha.hasError('required')) {
+						<span class="field-error" id="signup-confirm-error">Confirme sua senha.</span>
+					} @else if (form.hasError('passwordsMismatch') && form.controls.confirmarSenha.touched) {
+						<span class="field-error" id="signup-confirm-error">As senhas não coincidem.</span>
+					}
+				</div>
+
+				<button class="submit-button" type="submit">
+					Criar minha conta <span aria-hidden="true">→</span>
+				</button>
+
+				@if (successMessage) {
+					<p class="success-message" role="status">{{ successMessage }}</p>
+				}
+			</form>
+
+			<p class="switch-prompt">Já tem cadastro? <a routerLink="/login">Entre na sua conta</a></p>
+		</div>
+	</section>
+
+	<footer class="page-footer">© 2026 TPG Discos</footer>
+</main>
