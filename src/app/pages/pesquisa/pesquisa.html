@@ -1,1 +1,32 @@
-<p>pesquisa works!</p>
+<main class="pesquisa-page">
+  <section class="pesquisa-cabecalho">
+    <a routerLink="/">← Voltar para a loja</a>
+    @if (termo) {
+      <p class="subtitulo">Resultado da pesquisa</p>
+      <h1>Discos encontrados para: <strong>{{ termo }}</strong></h1>
+    } @else {
+      <p class="subtitulo">Nossa coleção</p>
+      <h1>Todos os discos</h1>
+    }
+    <p>{{ produtos.length }} produto(s) encontrado(s)</p>
+  </section>
+
+  @if (produtos.length) {
+    <section class="lista-produtos">
+      @for (produto of produtos; track produto.id) {
+        <app-card-disco
+          [produto]="produto"
+          (abrir)="abrirProduto($event)"
+          (adicionar)="adicionarAoCarrinho($event)"
+        />
+      }
+    </section>
+  } @else {
+    <section class="sem-resultados">
+      <div class="sem-resultados__icone" aria-hidden="true">♫</div>
+      <h2>Nenhum disco encontrado</h2>
+      <p>Tente pesquisar pelo nome do disco, artista ou categoria.</p>
+      <a routerLink="/">Voltar para a Home</a>
+    </section>
+  }
+</main>

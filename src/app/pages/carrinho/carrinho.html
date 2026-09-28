@@ -1,1 +1,35 @@
-<p>carrinho works!</p>
+<main class="carrinho">
+  <a class="voltar" routerLink="/">← Voltar para a loja</a>
+  <h1>Meu carrinho</h1>
+
+  @if (carrinho.itens().length) {
+    <section class="lista">
+      @for (item of carrinho.itens(); track item.produto.id) {
+        <article class="item">
+          <img [src]="item.produto.imagem" [alt]="item.produto.nome" />
+          <div class="item__info">
+            <h2>{{ item.produto.nome }}</h2>
+            <p>{{ item.produto.artista }}</p>
+            <strong>{{ item.produto.preco | currency: 'BRL' }}</strong>
+          </div>
+          <label>Quantidade
+            <input type="number" min="1" [value]="item.quantidade" (change)="carrinho.alterarQuantidade(item.produto.id, +quantidade.value)" #quantidade />
+          </label>
+          <button type="button" (click)="carrinho.remover(item.produto.id)">Remover</button>
+        </article>
+      }
+    </section>
+
+    <aside class="resumo">
+      <span>Total ({{ carrinho.quantidade() }} itens)</span>
+      <strong>{{ carrinho.total() | currency: 'BRL' }}</strong>
+      <button type="button">Finalizar compra</button>
+      <button type="button" class="limpar" (click)="carrinho.limpar()">Limpar carrinho</button>
+    </aside>
+  } @else {
+    <section class="vazio">
+      <p>Seu carrinho está vazio.</p>
+      <a routerLink="/">Escolher alguns discos</a>
+    </section>
+  }
+</main>

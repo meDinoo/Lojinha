@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
+  <rect width="700" height="700" fill="#e8d4b8"/>
+  <circle cx="350" cy="275" r="170" fill="#984536"/>
+  <circle cx="350" cy="275" r="105" fill="#e8d4b8"/>
+  <circle cx="350" cy="275" r="22" fill="#302727"/>
+  <path d="M0 525 Q170 440 350 530 T700 515 V700 H0Z" fill="#315f72"/>
+  <text x="38" y="80" fill="#302727" font-family="Arial" font-size="42" font-weight="bold">TPG DISCOS</text>
+  <text x="38" y="620" fill="#fff" font-family="Georgia" font-size="48" font-weight="bold">CLUBE DA</text>
+  <text x="38" y="670" fill="#fff" font-family="Georgia" font-size="48" font-weight="bold">ESQUINA</text>
+</svg>

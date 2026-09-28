@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
+  <rect width="700" height="700" fill="#161616"/>
+  <polygon points="120,420 350,175 580,420" fill="#f0f0e8"/>
+  <polygon points="350,175 580,420 120,420" fill="#303030"/>
+  <polygon points="350,175 350,590 580,420" fill="#d05042" opacity=".9"/>
+  <polygon points="350,175 350,590 120,420" fill="#e6b84d" opacity=".9"/>
+  <path d="M350 175 L350 590" stroke="#fff" stroke-width="8"/>
+  <text x="38" y="72" fill="#fff" font-family="Arial" font-size="34" letter-spacing="4">PINK FLOYD</text>
+  <text x="38" y="650" fill="#fff" font-family="Arial" font-size="35" letter-spacing="3">THE DARK SIDE</text>
+</svg>

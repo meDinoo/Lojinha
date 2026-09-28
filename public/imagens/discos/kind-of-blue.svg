@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
+  <rect width="700" height="700" fill="#173c63"/>
+  <circle cx="350" cy="330" r="205" fill="#2f7890"/>
+  <circle cx="350" cy="330" r="125" fill="#77b6b8" opacity=".8"/>
+  <circle cx="350" cy="330" r="38" fill="#173c63"/>
+  <path d="M80 210 L620 450 M620 210 L80 450" stroke="#c9e5dc" stroke-width="12" opacity=".7"/>
+  <text x="42" y="75" fill="#fff" font-family="Arial" font-size="39" font-weight="bold">MILES DAVIS</text>
+  <text x="42" y="625" fill="#fff" font-family="Georgia" font-size="57" font-weight="bold">KIND OF</text>
+  <text x="42" y="680" fill="#c9e5dc" font-family="Georgia" font-size="57" font-weight="bold">BLUE</text>
+</svg>

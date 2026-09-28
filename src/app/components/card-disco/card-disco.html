@@ -1,0 +1,18 @@
+<article class="card-produto">
+  <button
+    type="button"
+    class="card-produto__imagem"
+    (click)="abrir.emit(produto)"
+  >
+    <img [src]="produto.imagem" [alt]="'Capa do disco ' + produto.nome" />
+    @if (produto.destaque) { <span class="etiqueta">Destaque</span> }
+  </button>
+
+  <div class="card-produto__conteudo">
+    <small>{{ produto.categoria }}</small>
+    <h3>{{ produto.nome }}</h3>
+    <p class="artista">{{ produto.artista }}</p>
+    <strong>{{ produto.preco | currency: 'BRL' }}</strong>
+    <button type="button" (click)="adicionar.emit(produto)">Adicionar ao carrinho</button>
+  </div>
+</article>

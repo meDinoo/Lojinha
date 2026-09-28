@@ -1,10 +1,31 @@
+<main class="home">
+  <section class="banner">
+    <div>
+      <p class="subtitulo">TPG Discos</p>
+      <h1>Encontre o som que combina com você.</h1>
+      <p>Discos novos e clássicos para deixar sua coleção ainda melhor.</p>
+      <a class="botao" href="#produtos">Ver produtos</a>
+    </div>
+    <div class="banner__icone" aria-hidden="true">♫</div>
+  </section>
 
-<form formGroupName="forma">
+  <section id="produtos" class="catalogo">
+    <div class="titulo-secao">
+      <div>
+        <p class="subtitulo">Nossa seleção</p>
+        <h2>Discos em destaque</h2>
+      </div>
+      <a routerLink="/pesquisa">Ver todos</a>
+    </div>
 
-    <mat-form-field appearance="outline"  >
-        <mat-label>escreve ai</mat-label>
-        <input matInput formControlName="idoi"/>
-        <mat-error *ngIf="forma.get('idoi')?.hasError('maxLenght')">burro q so uai</mat-error>
-    </mat-form-field>
-    
-</form>
+    <div class="lista-produtos">
+      @for (produto of produtos; track produto.id) {
+        <app-card-disco
+          [produto]="produto"
+          (abrir)="abrirProduto($event)"
+          (adicionar)="adicionarAoCarrinho($event)"
+        />
+      }
+    </div>
+  </section>
+</main>

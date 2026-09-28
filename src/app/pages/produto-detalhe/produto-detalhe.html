@@ -1,0 +1,22 @@
+<main class="detalhe">
+  @if (produto) {
+    <a class="voltar" (click)="voltar()" >← Voltar</a>
+    <section class="produto">
+      <img class="produto__imagem" [src]="produto.imagem" [alt]="produto.nome" />
+      <div class="produto__informacoes">
+        <p class="subtitulo">{{ produto.categoria }}</p>
+        <h1>{{ produto.nome }}</h1>
+        <h2>{{ produto.artista }}</h2>
+        <p>{{ produto.descricao }}</p>
+        <strong class="preco">{{ produto.preco | currency: 'BRL' }}</strong>
+        <button type="button" (click)="adicionarAoCarrinho()">Adicionar ao carrinho</button>
+        @if (adicionado) {
+          <p class="sucesso">Produto adicionado ao carrinho. <a routerLink="/carrinho">Ver carrinho</a></p>
+        }
+      </div>
+    </section>
+  } @else {
+    <p>Produto não encontrado.</p>
+    <a routerLink="/">Voltar para a loja</a>
+  }
+</main>

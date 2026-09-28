@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
+  <rect width="700" height="700" fill="#f1c56b"/>
+  <rect x="75" y="95" width="550" height="430" rx="12" fill="#f6e7bd"/>
+  <circle cx="265" cy="315" r="100" fill="#315f72"/>
+  <circle cx="445" cy="315" r="100" fill="#984536"/>
+  <path d="M210 220 Q265 160 320 220 M390 220 Q445 160 500 220" fill="none" stroke="#302727" stroke-width="14"/>
+  <text x="38" y="65" fill="#302727" font-family="Arial" font-size="34" font-weight="bold">MÚSICA BRASILEIRA</text>
+  <text x="38" y="610" fill="#302727" font-family="Georgia" font-size="49" font-weight="bold">TOQUINHO</text>
+  <text x="38" y="665" fill="#984536" font-family="Georgia" font-size="49" font-weight="bold">&amp; VINICIUS</text>
+</svg>

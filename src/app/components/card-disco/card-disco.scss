@@ -1,0 +1,105 @@
+.card-produto {
+    overflow: hidden;
+    border: 1px solid #e4ddd6;
+    border-radius: 5px;
+    background: #fff;
+    font-family: Arial, sans-serif;
+    color: #302727;
+}
+
+.card-produto__imagem {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 220px;
+    border: 0;
+    background: #fff;
+    text-align: left;
+    cursor: pointer;
+}
+
+.card-produto__imagem img {
+    width: 100%;
+    height: 100%;
+   
+    transition: transform 0.3s ease;
+}
+
+.card-produto__imagem:hover img {
+    transform: scale(1.15);
+}
+
+.etiqueta {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+    background: #984536;
+    color: #fff;
+    font-size: 11px;
+}
+
+.card-produto__conteudo {
+    padding: 14px;
+}
+
+.card-produto small {
+    color: #8d817c;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.card-produto h3 {
+    margin: 7px 0 3px;
+    font-size: 17px;
+}
+
+.artista {
+    min-height: 34px;
+    margin: 0 0 12px;
+    color: #716865;
+    font-size: 13px;
+}
+
+.card-produto strong {
+    display: block;
+    margin-bottom: 12px;
+    color: #984536;
+}
+
+.card-produto__conteudo>button {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    border-radius: 4px;
+    background: #984536;
+    color: #fff;
+    font: inherit;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card-produto__conteudo>button:hover {
+    background: #7a352b;
+    transform: scale(0.98);
+}
+
+.card-produto__conteudo>button:active {
+    background: #5e2a22;
+    transform: scale(0.94) ;
+}
+
+@media (max-width: 520px) {
+    .card-produto__imagem {
+        height: 165px;
+    }
+
+    .card-produto__conteudo {
+        padding: 10px;
+    }
+
+    .card-produto h3 {
+        font-size: 15px;
+    }
+}
