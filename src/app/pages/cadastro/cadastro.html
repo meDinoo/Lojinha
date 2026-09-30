@@ -55,6 +55,49 @@
 				</div>
 
 				<div class="field">
+					<label for="signup-cpf">CPF</label>
+					<input
+						id="signup-cpf"
+						type="text"
+						formControlName="cpf"
+						inputmode="numeric"
+						maxlength="14"
+						autocomplete="off"
+						placeholder="000.000.000-00"
+						[attr.aria-invalid]="form.controls.cpf.invalid && form.controls.cpf.touched"
+						aria-describedby="signup-cpf-error"
+					/>
+
+					@if (form.controls.cpf.touched && form.controls.cpf.hasError('required')) {
+						<span class="field-error" id="signup-cpf-error">Informe seu CPF.</span>
+					} @else if (form.controls.cpf.touched && form.controls.cpf.hasError('maxlength')) {
+						<span class="field-error" id="signup-cpf-error">O CPF deve ter no máximo 14 caracteres.</span>
+					} @else if (form.controls.cpf.touched && (form.controls.cpf.hasError('pattern') || form.controls.cpf.hasError('cpfInvalido'))) {
+						<span class="field-error" id="signup-cpf-error">Digite um CPF válido.</span>
+					}
+				</div>
+
+				<div class="field">
+					<label for="signup-phone">Telefone</label>
+					<input
+						id="signup-phone"
+						type="tel"
+						formControlName="telefone"
+						inputmode="tel"
+						autocomplete="tel"
+						placeholder="(00) 90000-0000"
+						[attr.aria-invalid]="form.controls.telefone.invalid && form.controls.telefone.touched"
+						aria-describedby="signup-phone-error"
+					/>
+
+					@if (form.controls.telefone.touched && form.controls.telefone.hasError('required')) {
+						<span class="field-error" id="signup-phone-error">Informe seu telefone.</span>
+					} @else if (form.controls.telefone.touched && form.controls.telefone.hasError('pattern')) {
+						<span class="field-error" id="signup-phone-error">Digite um telefone válido.</span>
+					}
+				</div>
+
+				<div class="field">
 					<label for="signup-password">Senha</label>
 					<input
 						id="signup-password"

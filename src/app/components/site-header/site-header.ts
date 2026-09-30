@@ -18,4 +18,8 @@ export class SiteHeader {
       this.router.navigate(['/pesquisa'], { queryParams: { q: term } });
     }
   }
+
+  limparBusca(input: HTMLInputElement): void {
+    input.value = '';
+  }
 }

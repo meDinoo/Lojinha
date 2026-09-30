@@ -2,11 +2,11 @@
     width: min(1000px, calc(100% - 32px));
     margin: 35px auto;
     font-family: Arial, sans-serif;
-    color: #302727;
+    color: #111827;
 }
 
 .voltar {
-    color: #984536;
+    color: #1e5aa8;
     font-size: 13px;
 
 }
@@ -33,7 +33,7 @@ a.voltar:hover {
 }
 
 .subtitulo {
-    color: #984536;
+    color: #1e5aa8;
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -47,7 +47,7 @@ a.voltar:hover {
 
 .produto__informacoes h2 {
     margin: 0 0 24px;
-    color: #716865;
+    color: #4b5563;
     font-size: 18px;
     font-weight: normal;
 }
@@ -60,7 +60,7 @@ a.voltar:hover {
 .preco {
     display: block;
     margin: 25px 0 15px;
-    color: #984536;
+    color: #1e5aa8;
     font-size: 24px;
 }
 
@@ -70,12 +70,12 @@ a.voltar:hover {
 
 .sucesso {
     margin-top: 18px;
-    color: #477753;
+    color: #256d3d;
     font-size: 13px;
 }
 
 .sucesso a {
-    color: #984536;
+    color: #1e5aa8;
 }
 
 @media (max-width: 650px) {

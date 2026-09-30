@@ -10,8 +10,8 @@ html {
   @include mat.theme(
     (
       color: (
-        primary: mat.$rose-palette,
-        tertiary: mat.$red-palette,
+        primary: mat.$blue-palette,
+        tertiary: mat.$cyan-palette,
       ),
       typography: Roboto,
       density: 0,
@@ -40,7 +40,7 @@ body {
   padding: 0 20px;
   display: flex;
   flex-direction: column;
-  color: #302727;
+  color: #111827;
   background: #fff;
   font-family: Arial, sans-serif;
 }
@@ -56,24 +56,24 @@ body {
 }
 
 .auth-page .brand {
-  color: #342b2b;
+  color: #111827;
   text-decoration: none;
   font-size: 22px;
   font-weight: 700;
 }
 
 .auth-page .brand strong {
-  color: #9c4939;
+  color: #1e5aa8;
 }
 
 .auth-page .header-link {
-  color: #5f5753;
+  color: #374151;
   font-size: 13px;
   text-decoration: none;
 }
 
 .auth-page .header-link strong {
-  color: #9c4939;
+  color: #1e5aa8;
 }
 
 .auth-page .auth-layout {
@@ -93,7 +93,7 @@ body {
   background: #fff;
   border: 1px solid #e9e3da;
   border-radius: 8px;
-  box-shadow: 0 5px 18px #3027270d;
+  box-shadow: 0 5px 18px #1118270d;
 }
 
 .auth-page .form-heading {
@@ -102,13 +102,13 @@ body {
 
 .auth-page .form-heading h2 {
   margin: 0 0 8px;
-  color: #302727;
+  color: #111827;
   font-size: 25px;
 }
 
 .auth-page .form-heading p,
 .auth-page .switch-prompt {
-  color: #716865;
+  color: #4b5563;
   font-size: 14px;
   line-height: 1.5;
 }
@@ -130,7 +130,7 @@ body {
 
 .auth-page .label-row a,
 .auth-page .switch-prompt a {
-  color: #984536;
+  color: #1e5aa8;
   font-weight: 600;
   text-decoration: none;
 }
@@ -140,32 +140,32 @@ body {
   width: 100%;
   height: 43px;
   padding: 0 11px;
-  border: 1px solid #d8d0c8;
+  border: 1px solid #cbd5e1;
   border-radius: 4px;
   outline: none;
   background: #fff;
-  color: #302727;
+  color: #111827;
   font: inherit;
   font-size: 14px;
 }
 
 .auth-page .field input::placeholder {
-  color: #a39a94;
+  color: #94a3b8;
 }
 
 .auth-page .field input:focus {
-  border-color: #984536;
-  box-shadow: 0 0 0 2px #98453620;
+  border-color: #1e5aa8;
+  box-shadow: 0 0 0 2px #1e5aa820;
 }
 
 .auth-page .field input[aria-invalid='true'] {
-  border-color: #b43c35;
+  border-color: #b91c1c;
 }
 
 .auth-page .field-error {
   display: block;
   margin-top: 5px;
-  color: #b43c35;
+  color: #b91c1c;
   font-size: 12px;
 }
 
@@ -179,7 +179,7 @@ body {
   gap: 8px;
   border: 0;
   border-radius: 4px;
-  background: #984536;
+  background: #1e5aa8;
   color: #fff;
   cursor: pointer;
   font: 600 14px Arial, sans-serif;
@@ -191,15 +191,15 @@ body {
 
 .auth-page .submit-button:focus-visible,
 .auth-page a:focus-visible {
-  outline: 2px solid #c47c4e;
+  outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
 
 .auth-page .success-message {
   padding: 10px;
-  border-left: 3px solid #568267;
-  background: #eef5ee;
-  color: #365d43;
+  border-left: 3px solid #3f8f5a;
+  background: #ecfdf5;
+  color: #1f5130;
   font-size: 13px;
   line-height: 1.5;
 }
@@ -221,8 +221,8 @@ body {
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: #e8f1e8;
-  color: #477753;
+  background: #dcfce7;
+  color: #256d3d;
 }
 
 .auth-page .recovery-success h3 {
@@ -231,14 +231,14 @@ body {
 }
 
 .auth-page .recovery-success p {
-  color: #716865;
+  color: #4b5563;
   font-size: 13px;
   line-height: 1.6;
 }
 
 .auth-page .page-footer {
   padding: 14px 0;
-  color: #817873;
+  color: #6b7280;
   font-size: 12px;
   text-align: center;
 }

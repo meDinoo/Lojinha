@@ -1,6 +1,6 @@
 <header class="shop-header">
     <div class="header-main">
-        <a class="shop-brand" routerLink="/" aria-label="TPG Discos — início">
+        <a class="shop-brand" routerLink="/" aria-label="TPG Discos — início" (click)="limparBusca(searchInput)">
             <span class="brand-mark" aria-hidden="true">♫</span>
             <span>TPG <strong>Discos</strong></span>
         </a>
@@ -23,8 +23,8 @@
     </div>
 
     <nav class="main-nav" aria-label="Menu principal">
-        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Início</a>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="limparBusca(searchInput)">Início</a>
         <a routerLink="/pesquisa" routerLinkActive="active">Discos</a>
-        <a routerLink="/carrinho" routerLinkActive="active">Carrinho</a>
+        <a routerLink="/carrinho" routerLinkActive="active" (click)="limparBusca(searchInput)">Carrinho</a>
     </nav>
 </header>
