@@ -3,11 +3,12 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRouteSnapshot, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
 import { SiteHeader } from './components/site-header/site-header';
+import { SiteFooter } from './components/site-footer/site-footer';
 import { Toast } from './components/toast/toast';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SiteHeader, Toast],
+  imports: [RouterOutlet, SiteHeader, SiteFooter, Toast],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
