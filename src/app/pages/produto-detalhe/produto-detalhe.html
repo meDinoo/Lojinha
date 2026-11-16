@@ -1,6 +1,6 @@
 <main class="detalhe">
   @if (produto) {
-    <a class="voltar" (click)="voltar()" >← Voltar</a>
+    <a class="voltar" (click)="voltar()" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m6 6-6-6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Voltar</a>
     <section class="produto">
       <img class="produto__imagem" [src]="produto.imagem" [alt]="produto.nome" />
       <div class="produto__informacoes">

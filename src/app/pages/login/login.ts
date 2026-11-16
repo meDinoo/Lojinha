@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,23 +9,24 @@ import { RouterLink } from '@angular/router';
   styleUrl: './login.scss',
 })
 export class Login {
-  private readonly formBuilder = inject(FormBuilder);
+  private readonly formBuilder = inject(NonNullableFormBuilder);
   readonly form = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
     senha: ['', [Validators.required, Validators.minLength(8)]],
   });
   submitted = false;
-  successMessage = '';
+  statusMessage = '';
 
   onSubmit(): void {
     this.submitted = true;
-    this.successMessage = '';
+    this.statusMessage = '';
+    this.form.controls.email.setValue(this.form.controls.email.value.trim().toLowerCase());
 
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
 
-    this.successMessage = 'Tudo certo! O login poderá ser conectado ao sistema da loja.';
+    this.statusMessage = 'Dados validados. A autenticação ainda precisa ser conectada ao back-end.';
   }
 }

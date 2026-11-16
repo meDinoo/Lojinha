@@ -1,0 +1,166 @@
+<main class="checkout">
+  <a class="voltar" routerLink="/carrinho">← Voltar ao carrinho</a>
+  <header class="checkout__cabecalho">
+    <p class="subtitulo">Quase lá</p>
+    <h1>Finalizar pedido</h1>
+    <p>Confira seus discos e informe onde podemos entregar.</p>
+  </header>
+
+  @if (carrinho.itens().length) {
+    <div class="checkout__layout">
+      <form class="checkout__formulario" [formGroup]="form" (ngSubmit)="finalizarPedido()" novalidate>
+        <section class="checkout__secao">
+          <h2>Seus dados</h2>
+          <div class="campos">
+            <div class="campo">
+              <label for="checkout-nome">Nome completo</label>
+              <input id="checkout-nome" formControlName="nome" autocomplete="name" maxlength="100" required
+                [attr.aria-invalid]="form.controls.nome.invalid && form.controls.nome.touched"
+                aria-describedby="checkout-nome-erro" />
+              @if (form.controls.nome.touched && form.controls.nome.hasError('required')) {
+                <span class="erro-campo" id="checkout-nome-erro">Informe seu nome.</span>
+              } @else if (form.controls.nome.touched && form.controls.nome.hasError('minlength')) {
+                <span class="erro-campo" id="checkout-nome-erro">Informe seu nome completo.</span>
+              }
+            </div>
+            <div class="campo">
+              <label for="checkout-email">E-mail</label>
+              <input id="checkout-email" type="email" formControlName="email" autocomplete="email" required
+                [attr.aria-invalid]="form.controls.email.invalid && form.controls.email.touched"
+                aria-describedby="checkout-email-erro" />
+              @if (form.controls.email.touched && form.controls.email.hasError('required')) {
+                <span class="erro-campo" id="checkout-email-erro">Informe seu e-mail.</span>
+              } @else if (form.controls.email.touched && form.controls.email.hasError('email')) {
+                <span class="erro-campo" id="checkout-email-erro">Digite um e-mail válido.</span>
+              }
+            </div>
+            <div class="campo">
+              <label for="checkout-telefone">Telefone</label>
+              <input id="checkout-telefone" type="tel" formControlName="telefone" autocomplete="tel"
+                inputmode="tel" placeholder="(11) 99999-9999" required
+                [attr.aria-invalid]="form.controls.telefone.invalid && form.controls.telefone.touched"
+                aria-describedby="checkout-telefone-erro" />
+              @if (form.controls.telefone.touched && form.controls.telefone.invalid) {
+                <span class="erro-campo" id="checkout-telefone-erro">Informe um telefone com DDD.</span>
+              }
+            </div>
+          </div>
+        </section>
+
+        <section class="checkout__secao">
+          <h2>Endereço de entrega</h2>
+          <div class="campos">
+            <div class="campo">
+              <label for="checkout-cep">CEP</label>
+              <input id="checkout-cep" formControlName="cep" autocomplete="postal-code" inputmode="numeric"
+                placeholder="00000-000" required
+                [attr.aria-invalid]="form.controls.cep.invalid && form.controls.cep.touched"
+                aria-describedby="checkout-cep-erro" />
+              @if (form.controls.cep.touched && form.controls.cep.invalid) {
+                <span class="erro-campo" id="checkout-cep-erro">Informe um CEP válido.</span>
+              }
+            </div>
+            <div class="campo campo-largo">
+              <label for="checkout-endereco">Endereço</label>
+              <input id="checkout-endereco" formControlName="endereco"
+                autocomplete="street-address" maxlength="120" required
+                [attr.aria-invalid]="form.controls.endereco.invalid && form.controls.endereco.touched"
+                aria-describedby="checkout-endereco-erro" />
+              @if (form.controls.endereco.touched && form.controls.endereco.hasError('required')) {
+                <span class="erro-campo" id="checkout-endereco-erro">Informe o endereço.</span>
+              }
+            </div>
+            <div class="campo">
+              <label for="checkout-numero">Número</label>
+              <input id="checkout-numero" formControlName="numero" maxlength="20" required
+                [attr.aria-invalid]="form.controls.numero.invalid && form.controls.numero.touched"
+                aria-describedby="checkout-numero-erro" />
+              @if (form.controls.numero.touched && form.controls.numero.hasError('required')) {
+                <span class="erro-campo" id="checkout-numero-erro">Informe o número.</span>
+              }
+            </div>
+            <div class="campo">
+              <label for="checkout-complemento">Complemento <span>(opcional)</span></label>
+              <input id="checkout-complemento" formControlName="complemento" maxlength="100" />
+            </div>
+            <div class="campo">
+              <label for="checkout-bairro">Bairro</label>
+              <input id="checkout-bairro" formControlName="bairro" maxlength="80" required
+                [attr.aria-invalid]="form.controls.bairro.invalid && form.controls.bairro.touched"
+                aria-describedby="checkout-bairro-erro" />
+              @if (form.controls.bairro.touched && form.controls.bairro.hasError('required')) {
+                <span class="erro-campo" id="checkout-bairro-erro">Informe o bairro.</span>
+              }
+            </div>
+            <div class="campo">
+              <label for="checkout-cidade">Cidade</label>
+              <input id="checkout-cidade" formControlName="cidade" autocomplete="address-level2"
+                maxlength="100" required
+                [attr.aria-invalid]="form.controls.cidade.invalid && form.controls.cidade.touched"
+                aria-describedby="checkout-cidade-erro" />
+              @if (form.controls.cidade.touched && form.controls.cidade.hasError('required')) {
+                <span class="erro-campo" id="checkout-cidade-erro">Informe a cidade.</span>
+              }
+            </div>
+            <div class="campo">
+              <label for="checkout-estado">Estado (UF)</label>
+              <input id="checkout-estado" formControlName="estado" autocomplete="address-level1"
+                maxlength="2" minlength="2" required
+                [attr.aria-invalid]="form.controls.estado.invalid && form.controls.estado.touched"
+                aria-describedby="checkout-estado-erro" />
+              @if (form.controls.estado.touched && form.controls.estado.invalid) {
+                <span class="erro-campo" id="checkout-estado-erro">Informe a sigla do estado com 2 letras.</span>
+              }
+            </div>
+          </div>
+        </section>
+
+        <section class="checkout__secao">
+          <h2>Pagamento</h2>
+          <fieldset>
+            <legend>Escolha uma forma de pagamento</legend>
+            <label class="opcao-pagamento"><input type="radio" formControlName="pagamento" value="pix" /> Pix</label>
+            <label class="opcao-pagamento"><input type="radio" formControlName="pagamento" value="cartao" /> Cartão de crédito</label>
+            <label class="opcao-pagamento"><input type="radio" formControlName="pagamento" value="boleto" /> Boleto bancário</label>
+          </fieldset>
+          @if (form.controls.pagamento.touched && form.controls.pagamento.hasError('required')) {
+            <p class="erro-campo" role="alert">Selecione uma forma de pagamento.</p>
+          }
+          <p class="nota">O pagamento será integrado quando o sistema da loja estiver conectado. Nenhum dado informado aqui é enviado ou salvo.</p>
+        </section>
+
+        @if (form.invalid && form.touched) {
+          <p class="mensagem-erro" role="alert">Preencha os campos obrigatórios para continuar.</p>
+        }
+        @if (enviado) {
+          <p class="mensagem-info" role="status">Dados validados e preparados para a integração. Nenhum pedido foi enviado ou cobrado.</p>
+        }
+
+        <button class="botao-finalizar" type="submit">Finalizar pedido</button>
+      </form>
+
+      <aside class="resumo" aria-labelledby="resumo-titulo">
+        <h2 id="resumo-titulo">Resumo do pedido</h2>
+        @for (item of carrinho.itens(); track item.produto.id) {
+          <article class="resumo__item">
+            <img [src]="item.produto.imagem" [alt]="item.produto.nome" />
+            <div>
+              <h3>{{ item.produto.nome }}</h3>
+              <p>{{ item.quantidade }} × {{ item.produto.preco | currency: 'BRL' }}</p>
+            </div>
+            <strong>{{ item.produto.preco * item.quantidade | currency: 'BRL' }}</strong>
+          </article>
+        }
+        <div class="resumo__linha"><span>Subtotal</span><strong>{{ carrinho.total() | currency: 'BRL' }}</strong></div>
+        <div class="resumo__linha"><span>Entrega (demonstrativa)</span><strong>{{ frete | currency: 'BRL' }}</strong></div>
+        <div class="resumo__total"><span>Total</span><strong>{{ total | currency: 'BRL' }}</strong></div>
+      </aside>
+    </div>
+  } @else {
+    <section class="checkout__vazio">
+      <h2>Seu carrinho está vazio</h2>
+      <p>Adicione discos antes de iniciar a finalização do pedido.</p>
+      <a routerLink="/pesquisa">Explorar discos</a>
+    </section>
+  }
+</main>

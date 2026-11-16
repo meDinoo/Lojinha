@@ -1,0 +1,29 @@
+.area-cliente { width: min(1000px, calc(100% - 32px)); margin: 35px auto 55px; color: #241830; font-family: Arial, sans-serif; }
+.area-cliente__cabecalho { padding: 25px 30px; border-radius: 5px; background: #f6e5b8; }
+.subtitulo { margin: 0 0 8px; color: #7146d9; font-size: 12px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+.area-cliente__cabecalho h1 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.5rem); }
+.area-cliente__cabecalho > p:last-child { margin-bottom: 0; color: #766c7b; }
+.boas-vindas { margin: 26px 0 18px; color: #514658; }
+.confirmacao-compra { display: flex; align-items: flex-start; gap: 14px; margin: 18px 0 22px; padding: 18px; border: 1px solid #b8d7c2; border-radius: 5px; background: #edf7ef; color: #245c39; }
+.confirmacao-compra__icone { flex: 0 0 30px; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: #397c5a; color: #fff; font-size: 18px; font-weight: bold; }
+.confirmacao-compra h2 { margin: 0 0 6px; font-size: 18px; }
+.confirmacao-compra p { margin: 0; font-size: 13px; line-height: 1.5; }
+.atalhos { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.atalhos a { padding: 10px 14px; border: 1px solid #e8dfd3; border-radius: 4px; background: #fffdf8; color: #7146d9; font-size: 13px; text-decoration: none; }
+.painel { margin-top: 18px; padding: 22px; border: 1px solid #e8dfd3; border-radius: 5px; background: #fffdf8; }
+.painel__titulo { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid #e8dfd3; }
+.painel__titulo h2 { margin: 0; font-size: 20px; }
+.painel__titulo span { color: #766c7b; font-size: 12px; }
+.estado-vazio { padding: 28px 8px 8px; }
+.estado-vazio h3 { margin: 0 0 8px; font-size: 17px; }
+.estado-vazio p, .aviso-integracao { color: #766c7b; font-size: 13px; line-height: 1.6; }
+.estado-vazio a, .criar-conta a { color: #7146d9; }
+.dados { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 18px 0 0; }
+.dados dt { margin-bottom: 5px; color: #766c7b; font-size: 12px; }
+.dados dd { margin: 0; font-size: 14px; }
+.nao-logado { max-width: 560px; margin: 35px auto 0; padding: 35px; border: 1px solid #e8dfd3; border-radius: 5px; background: #fffdf8; text-align: center; }
+.nao-logado h2 { margin-top: 0; font-size: 22px; }
+.nao-logado > p { color: #766c7b; font-size: 14px; line-height: 1.6; }
+.botao-conta { display: inline-block; margin: 8px 0; padding: 12px 18px; border-radius: 4px; background: #7146d9; color: #fffdf8; font-size: 14px; font-weight: bold; text-decoration: none; }
+.nao-logado .criar-conta { margin-bottom: 0; font-size: 13px; }
+@media (max-width: 560px) { .area-cliente__cabecalho { padding: 22px; }.painel { padding: 18px; }.painel__titulo { align-items: flex-start; flex-direction: column; }.dados { grid-template-columns: 1fr; }.nao-logado { padding: 26px 20px; } }

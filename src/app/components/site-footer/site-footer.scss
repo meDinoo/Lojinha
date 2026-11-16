@@ -7,8 +7,8 @@
     position: relative;
     overflow: hidden;
     padding: 48px 24px 20px;
-    background: #292322;
-    color: #e8ded5;
+    background: #20142d;
+    color: #f6e5b8;
     font-family: Arial, sans-serif;
 }
 
@@ -18,7 +18,7 @@
     left: max(24px, calc((100% - 1100px) / 2));
     width: 64px;
     height: 4px;
-    background: #c87958;
+    background: #fa6547;
     content: '';
 }
 
@@ -39,7 +39,7 @@
 }
 
 .footer-brand {
-    color: #fff8f0;
+    color: #fffdf8;
     font-family: Georgia, serif;
     font-size: 27px;
     font-weight: 700;
@@ -48,14 +48,14 @@
 }
 
 .footer-brand strong {
-    color: #d68a68;
+    color: #f0bb62;
 }
 
 .footer-about p,
 .footer-contact p {
     max-width: 300px;
     margin: 12px 0 0;
-    color: #bdb1a8;
+    color: #c9becd;
     font-size: 13px;
     line-height: 1.7;
 }
@@ -63,7 +63,7 @@
 .footer-links h2,
 .footer-contact h2 {
     margin: 3px 0 16px;
-    color: #fff8f0;
+    color: #fffdf8;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -73,7 +73,7 @@
 .footer-links a,
 .footer-contact a {
     margin-bottom: 11px;
-    color: #d5c9c0;
+    color: #f6e5b8;
     font-size: 13px;
     text-decoration: none;
     transition: color 150ms ease;
@@ -81,7 +81,7 @@
 
 .footer-links a:hover,
 .footer-contact a:hover {
-    color: #e4a181;
+    color: #f5c975;
 }
 
 .footer-contact p {
@@ -93,8 +93,8 @@
     grid-column: 1 / -1;
     margin: 0;
     padding-top: 17px;
-    border-top: 1px solid #49413d;
-    color: #a99d94;
+    border-top: 1px solid #49365c;
+    color: #b3a9b7;
     font-size: 11px;
 }
 

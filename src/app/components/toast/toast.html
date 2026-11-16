@@ -1,7 +1,7 @@
 @if (toast.mensagem()) {
   <div class="toast" role="status" aria-live="polite">
-    <span class="toast__icone" aria-hidden="true">✓</span>
+    <span class="toast__icone"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <span>{{ toast.mensagem() }}</span>
-    <button type="button" (click)="toast.fechar()" aria-label="Fechar aviso">×</button>
+    <button type="button" (click)="toast.fechar()" aria-label="Fechar aviso"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
   </div>
 }

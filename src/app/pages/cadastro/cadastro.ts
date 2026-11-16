@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { AbstractControl, FormBuilder, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, NonNullableFormBuilder, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 const passwordsMatch: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
@@ -15,22 +15,24 @@ const passwordsMatch: ValidatorFn = (control: AbstractControl): ValidationErrors
   styleUrl: './cadastro.scss',
 })
 export class Cadastro {
-  private readonly formBuilder = inject(FormBuilder);
+  private readonly formBuilder = inject(NonNullableFormBuilder);
   readonly form = this.formBuilder.group({
     nome: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
     senha: ['', [Validators.required, Validators.minLength(8)]],
     confirmarSenha: ['', Validators.required],
   }, { validators: passwordsMatch });
-  successMessage = '';
+  statusMessage = '';
 
   onSubmit(): void {
-    this.successMessage = '';
+    this.statusMessage = '';
+    this.form.controls.nome.setValue(this.form.controls.nome.value.trim());
+    this.form.controls.email.setValue(this.form.controls.email.value.trim().toLowerCase());
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
-    this.successMessage = 'Cadastro validado! Em uma próxima etapa, sua conta poderá ser salva na loja.';
-  }
 
+    this.statusMessage = 'Dados validados. O cadastro ainda precisa ser conectado ao back-end.';
+  }
 }

@@ -1,0 +1,139 @@
+{
+  "planHash": "193a74bb119cc8bca03fc6a2360beebe147b6e19671dac5856cd422d949bfdbf",
+  "phase": "standalone",
+  "recordedAtUtc": "2026-11-16T03:07:22.3886063Z",
+  "retryCount": 3,
+  "resetBaseline": false,
+  "complete": true,
+  "result": {
+    "setupSucceeded": true,
+    "setupDurationMs": 66271,
+    "setupFailureOutput": null,
+    "assertions": [
+      {
+        "name": "production-build",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E programacao-web@0.0.0 build\r\n\u003E ng build\r\n\r\n\u001B[33m\u003E\u001B[39m Building...\r\n\u001B[32m\u221A\u001B[39m Building...\r\n\u001B[1mInitial chunk files\u001B[22m  \u001B[2m | \u001B[22m\u001B[1mNames\u001B[22m        \u001B[2m | \u001B[22m \u001B[1mRaw size\u001B[22m\u001B[2m | \u001B[22m\u001B[1mEstimated transfer size\u001B[22m\r\n\u001B[32mmain-XW6JCSYS.js\u001B[39m     \u001B[2m | \u001B[22m\u001B[2mmain\u001B[22m         \u001B[2m | \u001B[22m\u001B[36m364.74 kB\u001B[39m\u001B[2m | \u001B[22m               \u001B[36m91.26 kB\u001B[39m\r\n\u001B[32mpolyfills-5CFQRCPP.js\u001B[39m\u001B[2m | \u001B[22m\u001B[2mpolyfills\u001B[22m    \u001B[2m | \u001B[22m \u001B[36m34.59 kB\u001B[39m\u001B[2m | \u001B[22m               \u001B[36m11.33 kB\u001B[39m\r\n\u001B[32mstyles-WBCSI6NB.css\u001B[39m  \u001B[2m | \u001B[22m\u001B[2mstyles\u001B[22m       \u001B[2m | \u001B[22m \u001B[36m11.82 kB\u001B[39m\u001B[2m | \u001B[22m                \u001B[36m2.31 kB\u001B[39m\r\n\r\n\u001B[1m \u001B[22m                    \u001B[2m | \u001B[22m\u001B[1mInitial total\u001B[22m\u001B[2m | \u001B[22m\u001B[1m411.15 kB\u001B[22m\u001B[2m | \u001B[22m              \u001B[1m104.90 kB\u001B[22m\r\n\r\nApplication bundle generation complete. [2.880 seconds] - 2026-11-16T03:07:10.595Z\r\n\r\nOutput location: D:\\Lojinha\\dist\\programacao-web\r\n\r\n",
+        "durationMs": 5444
+      },
+      {
+        "name": "tests-pass",
+        "kind": "process",
+        "verificationMethod": "test-results",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "\r\n\u003E programacao-web@0.0.0 test\r\n\u003E ng test --watch=false --browsers=ChromeHeadless\r\n\r\n\u001B[33m\u003E\u001B[39m Building...\r\n\u001B[32m\u221A\u001B[39m Building...\r\n\u001B[1mInitial chunk files\u001B[22m          \u001B[2m | \u001B[22m\u001B[1mNames\u001B[22m                     \u001B[2m | \u001B[22m \u001B[1mRaw size\u001B[22m\r\n\u001B[32mchunk-WOUPZFH6.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m  \u001B[36m1.16 MB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-63TIZPBL.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m  \u001B[36m1.13 MB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mpolyfills.js\u001B[39m                 \u001B[2m | \u001B[22m\u001B[2mpolyfills\u001B[22m                 \u001B[2m | \u001B[22m  \u001B[36m1.04 MB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-IEL3BYD5.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m\u001B[36m254.05 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-HE5W6SPR.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m\u001B[36m242.87 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-BL4WRXLX.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m\u001B[36m241.56 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mjasmine-cleanup-1.js\u001B[39m         \u001B[2m | \u001B[22m\u001B[2mjasmine-cleanup-1\u001B[22m         \u001B[2m | \u001B[22m \u001B[36m67.20 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mspec-app.spec.js\u001B[39m             \u001B[2m | \u001B[22m\u001B[2mspec-app.spec\u001B[22m             \u001B[2m | \u001B[22m \u001B[36m24.44 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mtest_main.js\u001B[39m                 \u001B[2m | \u001B[22m\u001B[2mtest_main\u001B[22m                 \u001B[2m | \u001B[22m \u001B[36m21.87 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-5LXG4AAE.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m \u001B[36m18.92 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mstyles.css\u001B[39m                   \u001B[2m | \u001B[22m\u001B[2mstyles\u001B[22m                    \u001B[2m | \u001B[22m \u001B[36m13.43 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-WXHXA3GZ.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m  \u001B[36m9.38 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-JX6YXLA2.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m  \u001B[36m7.86 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-472IZECN.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m  \u001B[36m7.44 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-KA5NQIVB.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m  \u001B[36m7.20 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-CXKJEA7B.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m  \u001B[36m7.12 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-C2OPDDWY.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m  \u001B[36m5.40 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-NH23U5SF.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m  \u001B[36m5.03 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-6FPTHWTC.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m  \u001B[36m4.92 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mspec-finalizar-pedido.spec.js\u001B[39m\u001B[2m | \u001B[22m\u001B[2mspec-finalizar-pedido.spec\u001B[22m\u001B[2m | \u001B[22m  \u001B[36m4.27 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-ZMYTIXE4.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m  \u001B[36m3.57 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mspec-area-cliente.spec.js\u001B[39m    \u001B[2m | \u001B[22m\u001B[2mspec-area-cliente.spec\u001B[22m    \u001B[2m | \u001B[22m  \u001B[36m2.61 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mchunk-3FMBEB3S.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2m-\u001B[22m                         \u001B[2m | \u001B[22m  \u001B[36m2.13 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mspec-cadastro.spec.js\u001B[39m        \u001B[2m | \u001B[22m\u001B[2mspec-cadastro.spec\u001B[22m        \u001B[2m | \u001B[22m  \u001B[36m2.12 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mspec-login.spec.js\u001B[39m           \u001B[2m | \u001B[22m\u001B[2mspec-login.spec\u001B[22m           \u001B[2m | \u001B[22m  \u001B[36m1.92 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mspec-pesquisa.spec.js\u001B[39m        \u001B[2m | \u001B[22m\u001B[2mspec-pesquisa.spec\u001B[22m        \u001B[2m | \u001B[22m  \u001B[36m1.63 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mspec-recuperar-senha.spec.js\u001B[39m \u001B[2m | \u001B[22m\u001B[2mspec-recuperar-senha.spec\u001B[22m \u001B[2m | \u001B[22m  \u001B[36m1.25 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mspec-carrinho.service.spec.js\u001B[39m\u001B[2m | \u001B[22m\u001B[2mspec-carrinho.service.spec\u001B[22m\u001B[2m | \u001B[22m  \u001B[36m1.19 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mspec-carrinho.spec.js\u001B[39m        \u001B[2m | \u001B[22m\u001B[2mspec-carrinho.spec\u001B[22m        \u001B[2m | \u001B[22m  \u001B[36m1.17 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mspec-home.spec.js\u001B[39m            \u001B[2m |\n\u2026[truncated]",
+        "durationMs": 6283,
+        "testResults": {
+          "testFramework": "jasmine",
+          "runnerDetectedFrom": "package_json",
+          "testsTotal": 0,
+          "testsPassed": 0,
+          "testsFailed": 0,
+          "testsSkipped": 0,
+          "parseFailed": true
+        }
+      },
+      {
+        "name": "home-route-serves",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 200\n\u003C!doctype html\u003E\r\n\u003Chtml lang=\u0022en\u0022\u003E\r\n\u003Chead\u003E\n  \u003Cscript type=\u0022module\u0022 src=\u0022/@vite/client\u0022\u003E\u003C/script\u003E\n\r\n  \u003Cmeta charset=\u0022utf-8\u0022\u003E\r\n  \u003Ctitle\u003EProgramacaoWeb\u003C/title\u003E\r\n  \u003Cbase href=\u0022/\u0022\u003E\r\n  \u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\r\n  \u003Clink rel=\u0022icon\u0022 type=\u0022image/x-icon\u0022 href=\u0022favicon.ico\u0022\u003E\r\n  \u003Clink href=\u0022https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500\u0026amp;display=swap\u0022 rel=\u0022stylesheet\u0022\u003E\r\n  \u003Clink href=\u0022https://fonts.googleapis.com/icon?family=Material\u002BIcons\u0022 rel=\u0022stylesheet\u0022\u003E\r\n\u003Clink rel=\u0022stylesheet\u0022 href=\u0022styles.css\u0022\u003E\u003C/head\u003E\r\n\u003Cbody style=\u0022align-items: center; align-content: center;\u0022\u003E\r\n  \u003Capp-root\u003E\u003C/app-root\u003E\r\n\u003Cscript src=\u0022polyfills.js\u0022 type=\u0022module\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022main.js\u0022 type=\u0022module\u0022\u003E\u003C/script\u003E\u003C/body\u003E\r\n\u003C/html\u003E\r\n\n--- server output ---\n\r\n\u003E programacao-web@0.0.0 start\r\n\u003E ng serve --host 127.0.0.1\r\n\r\n\u001B[33m\u003E\u001B[39m Building...\r\n\u001B[32m\u221A\u001B[39m Building...\r\n\u001B[1mInitial chunk files\u001B[22m\u001B[2m | \u001B[22m\u001B[1mNames\u001B[22m        \u001B[2m | \u001B[22m \u001B[1mRaw size\u001B[22m\r\n\u001B[32mmain.js\u001B[39m            \u001B[2m | \u001B[22m\u001B[2mmain\u001B[22m         \u001B[2m | \u001B[22m\u001B[36m219.53 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mstyles.css\u001B[39m         \u001B[2m | \u001B[22m\u001B[2mstyles\u001B[22m       \u001B[2m | \u001B[22m \u001B[36m13.43 kB\u001B[39m\u001B[2m | \u001B[22m\r\n\u001B[32mpolyfills.js\u001B[39m       \u001B[2m | \u001B[22m\u001B[2mpolyfills\u001B[22m    \u001B[2m | \u001B[22m \u001B[36m95 bytes\u001B[39m\u001B[2m | \u001B[22m\r\n\r\n\u001B[1m \u001B[22m                  \u001B[2m | \u001B[22m\u001B[1mInitial total\u001B[22m\u001B[2m | \u001B[22m\u001B[1m233.06 kB\u001B[22m\r\n\r\nApplication bundle generation complete. [2.384 seconds] - 2026-11-16T03:07:21.869Z\r\n\r\nWatch mode enabled. Watching for file changes...\r\nNOTE: Raw file sizes do not reflect development server per-request transformations.\r\n  \u001B[32m\u279C\u001B[39m  \u001B[1mLocal\u001B[22m:   \u001B[36mhttp://127.0.0.1:\u001B[1m4200\u001B[22m/\u001B[39m\r\n",
+        "durationMs": 5116
+      },
+      {
+        "name": "checkout-route-serves",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 200\n\u003C!doctype html\u003E\r\n\u003Chtml lang=\u0022en\u0022\u003E\r\n\u003Chead\u003E\n  \u003Cscript type=\u0022module\u0022 src=\u0022/@vite/client\u0022\u003E\u003C/script\u003E\n\r\n  \u003Cmeta charset=\u0022utf-8\u0022\u003E\r\n  \u003Ctitle\u003EProgramacaoWeb\u003C/title\u003E\r\n  \u003Cbase href=\u0022/\u0022\u003E\r\n  \u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1\u0022\u003E\r\n  \u003Clink rel=\u0022icon\u0022 type=\u0022image/x-icon\u0022 href=\u0022favicon.ico\u0022\u003E\r\n  \u003Clink href=\u0022https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500\u0026amp;display=swap\u0022 rel=\u0022stylesheet\u0022\u003E\r\n  \u003Clink href=\u0022https://fonts.googleapis.com/icon?family=Material\u002BIcons\u0022 rel=\u0022stylesheet\u0022\u003E\r\n\u003Clink rel=\u0022stylesheet\u0022 href=\u0022styles.css\u0022\u003E\u003C/head\u003E\r\n\u003Cbody style=\u0022align-items: center; align-content: center;\u0022\u003E\r\n  \u003Capp-root\u003E\u003C/app-root\u003E\r\n\u003Cscript src=\u0022polyfills.js\u0022 type=\u0022module\u0022\u003E\u003C/script\u003E\u003Cscript src=\u0022main.js\u0022 type=\u0022module\u0022\u003E\u003C/script\u003E\u003C/body\u003E\r\n\u003C/html\u003E\r\n",
+        "durationMs": 34
+      }
+    ],
+    "executions": [
+      {
+        "source": "setup[0]",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "ci"
+        ],
+        "cwd": "D:\\Lojinha",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "production-build",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "run",
+          "build"
+        ],
+        "cwd": "D:\\Lojinha",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "tests-pass",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "test",
+          "--",
+          "--watch=false",
+          "--browsers=ChromeHeadless"
+        ],
+        "cwd": "D:\\Lojinha",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "home-route-serves",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "start",
+          "--",
+          "--host",
+          "127.0.0.1"
+        ],
+        "cwd": "D:\\Lojinha",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "checkout-route-serves",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\npm.CMD",
+        "args": [
+          "start",
+          "--",
+          "--host",
+          "127.0.0.1"
+        ],
+        "cwd": "D:\\Lojinha",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      }
+    ]
+  }
+}

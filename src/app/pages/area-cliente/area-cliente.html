@@ -1,0 +1,56 @@
+<main class="area-cliente">
+  <header class="area-cliente__cabecalho">
+    <p class="subtitulo">TPG Discos</p>
+    <h1>Área do cliente</h1>
+    <p>Acompanhe seus pedidos e mantenha seus dados atualizados.</p>
+  </header>
+
+  @if (conta.usuarioAtual(); as usuario) {
+    <p class="boas-vindas">Olá, <strong>{{ usuario.nome }}</strong>.</p>
+
+    @if (pedido.ultimoPedidoConfirmado(); as confirmacao) {
+      <section class="confirmacao-compra" role="status" aria-labelledby="confirmacao-titulo">
+        <span class="confirmacao-compra__icone" aria-hidden="true">✓</span>
+        <div>
+          <h2 id="confirmacao-titulo">Obrigado pela sua compra!</h2>
+          <p>O pedido <strong>#{{ confirmacao.id }}</strong> foi confirmado. Você poderá acompanhar as atualizações em “Meus pedidos”.</p>
+        </div>
+      </section>
+    }
+
+    <nav class="atalhos" aria-label="Atalhos da conta">
+      <a href="#pedidos">Meus pedidos</a>
+      <a href="#dados">Meus dados</a>
+      <a href="#enderecos">Endereços</a>
+    </nav>
+
+    <section class="painel" id="pedidos">
+      <div class="painel__titulo"><h2>Meus pedidos</h2><span>Histórico e acompanhamento</span></div>
+      <div class="estado-vazio">
+        <h3>Seus pedidos aparecerão aqui</h3>
+        <p>O histórico e o acompanhamento serão carregados quando a integração com a loja estiver conectada.</p>
+        <a routerLink="/pesquisa">Continuar comprando</a>
+      </div>
+    </section>
+
+    <section class="painel" id="dados">
+      <div class="painel__titulo"><h2>Meus dados</h2><span>Informações da conta</span></div>
+      <dl class="dados">
+        <div><dt>Nome</dt><dd>{{ usuario.nome }}</dd></div>
+        <div><dt>E-mail</dt><dd>{{ usuario.email }}</dd></div>
+      </dl>
+    </section>
+
+    <section class="painel" id="enderecos">
+      <div class="painel__titulo"><h2>Endereços</h2><span>Entrega dos seus pedidos</span></div>
+      <p class="aviso-integracao">Seus endereços salvos serão exibidos aqui após a integração com o sistema da loja.</p>
+    </section>
+  } @else {
+    <section class="nao-logado">
+      <h2>Entre para acessar sua conta</h2>
+      <p>Depois de entrar, você poderá acompanhar pedidos, consultar seus dados e gerenciar endereços.</p>
+      <a class="botao-conta" routerLink="/login">Entrar na minha conta</a>
+      <p class="criar-conta">Ainda não tem cadastro? <a routerLink="/cadastro">Criar conta</a></p>
+    </section>
+  }
+</main>

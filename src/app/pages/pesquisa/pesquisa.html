@@ -1,6 +1,6 @@
 <main class="pesquisa-page">
   <section class="pesquisa-cabecalho">
-    <a routerLink="/">← Voltar para a loja</a>
+    <a routerLink="/"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m6 6-6-6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Voltar para a loja</a>
     @if (termo) {
       <p class="subtitulo">Resultado da pesquisa</p>
       <h1>Discos encontrados para: <strong>{{ termo }}</strong></h1>
@@ -8,12 +8,22 @@
       <p class="subtitulo">Nossa coleção</p>
       <h1>Todos os discos</h1>
     }
-    <p>{{ produtos.length }} produto(s) encontrado(s)</p>
+    <p>{{ produtosFiltrados.length }} produto(s) encontrado(s)</p>
   </section>
 
-  @if (produtos.length) {
+  <section class="filtros" aria-label="Filtros de produtos">
+    <label for="filtro-genero">Gênero musical</label>
+    <select id="filtro-genero" [value]="generoSelecionado" (change)="selecionarGenero(generoSelect.value)" #generoSelect>
+      <option value="">Todos os gêneros</option>
+      @for (genero of generos; track genero) {
+        <option [value]="genero">{{ genero }}</option>
+      }
+    </select>
+  </section>
+
+  @if (produtosFiltrados.length) {
     <section class="lista-produtos">
-      @for (produto of produtos; track produto.id) {
+      @for (produto of produtosFiltrados; track produto.id) {
         <app-card-disco
           [produto]="produto"
           (abrir)="abrirProduto($event)"
@@ -23,9 +33,9 @@
     </section>
   } @else {
     <section class="sem-resultados">
-      <div class="sem-resultados__icone" aria-hidden="true">♫</div>
+      <div class="sem-resultados__icone" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/><circle cx="12" cy="12" r="5.5" fill="none" stroke="currentColor" stroke-width=".8"/></svg></div>
       <h2>Nenhum disco encontrado</h2>
-      <p>Tente pesquisar pelo nome do disco, artista ou categoria.</p>
+      <p>Tente outro gênero ou pesquise pelo nome do disco, artista ou categoria.</p>
       <a routerLink="/">Voltar para a Home</a>
     </section>
   }

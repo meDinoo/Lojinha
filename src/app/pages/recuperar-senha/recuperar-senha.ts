@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './recuperar-senha.scss',
 })
 export class RecuperarSenha {
-  private readonly formBuilder = inject(FormBuilder);
+  private readonly formBuilder = inject(NonNullableFormBuilder);
   readonly form = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
   });
@@ -17,6 +17,7 @@ export class RecuperarSenha {
 
   onSubmit(): void {
     this.submitted = false;
+    this.form.controls.email.setValue(this.form.controls.email.value.trim().toLowerCase());
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;

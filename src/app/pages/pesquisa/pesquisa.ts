@@ -20,14 +20,40 @@ export class Pesquisa implements OnInit {
   private readonly toast = inject(ToastService);
 
   produtos: Produto[] = [];
+  generos: string[] = [];
   termo = '';
+  generoSelecionado = '';
 
   ngOnInit(): void {
+    this.generoSelecionado = localStorage.getItem('lojinha.genero') ?? '';
+    this.produtoService.listar().subscribe((produtos) => {
+      this.generos = [...new Set(produtos.map((produto) => produto.categoria))].sort((a, b) => a.localeCompare(b));
+      if (this.generoSelecionado && !this.generos.includes(this.generoSelecionado)) {
+        this.selecionarGenero('');
+      }
+    });
     this.route.queryParamMap.subscribe((params) => {
       this.termo = params.get('q')?.trim() ?? '';
       const busca = this.termo ? this.produtoService.pesquisar(this.termo) : this.produtoService.listar();
-      busca.subscribe((produtos) => (this.produtos = produtos));
+      busca.subscribe((produtos) => {
+        this.produtos = produtos;
+      });
     });
+  }
+
+  get produtosFiltrados(): Produto[] {
+    return this.generoSelecionado
+      ? this.produtos.filter((produto) => produto.categoria === this.generoSelecionado)
+      : this.produtos;
+  }
+
+  selecionarGenero(genero: string): void {
+    this.generoSelecionado = genero;
+    if (genero) {
+      localStorage.setItem('lojinha.genero', genero);
+    } else {
+      localStorage.removeItem('lojinha.genero');
+    }
   }
 
   adicionarAoCarrinho(produto: Produto): void {

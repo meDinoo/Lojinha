@@ -98,11 +98,11 @@
 				</div>
 
 				<button class="submit-button" type="submit">
-					Criar minha conta <span aria-hidden="true">→</span>
+					Criar minha conta <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
 				</button>
 
-				@if (successMessage) {
-					<p class="success-message" role="status">{{ successMessage }}</p>
+				@if (statusMessage) {
+					<p class="success-message" role="status">{{ statusMessage }}</p>
 				}
 			</form>
 
