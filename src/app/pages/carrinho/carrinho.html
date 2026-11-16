@@ -23,7 +23,11 @@
     <aside class="resumo">
       <span>Total ({{ carrinho.quantidade() }} itens)</span>
       <strong>{{ carrinho.total() | currency: 'BRL' }}</strong>
+<<<<<<< HEAD
       <a class="finalizar" routerLink="/finalizar-pedido">Finalizar compra</a>
+=======
+      <button type="button" (click)="finalizarCompra()">Finalizar compra</button>
+>>>>>>> af442a4b8463c43e6225361477a0e56fba869814
       <button type="button" class="limpar" (click)="carrinho.limpar()">Limpar carrinho</button>
     </aside>
   } @else {

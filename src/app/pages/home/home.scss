@@ -2,7 +2,11 @@
     width: min(1180px, calc(100% - 40px));
     margin: 0 auto;
     font-family: Arial, sans-serif;
+<<<<<<< HEAD
     color: #241830;
+=======
+    color: #111827;
+>>>>>>> af442a4b8463c43e6225361477a0e56fba869814
 }
 
 .banner {
@@ -11,6 +15,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+<<<<<<< HEAD
     min-height: 330px;
     margin: 34px 0 58px;
     padding: 42px 56px;
@@ -32,11 +37,22 @@
     box-shadow: 0 0 0 22px #ffffff08, 0 0 0 44px #ffffff08;
     content: '';
     pointer-events: none;
+=======
+    min-height: 270px;
+    margin: 30px 0 48px;
+    padding: 32px 48px;
+    border-radius: 6px;
+    background: #dbeafe;
+>>>>>>> af442a4b8463c43e6225361477a0e56fba869814
 }
 
 .subtitulo {
     margin: 0 0 8px;
+<<<<<<< HEAD
     color: #fa6547;
+=======
+    color: #1e5aa8;
+>>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -56,6 +72,7 @@ h1 {
 }
 
 .banner__icone {
+<<<<<<< HEAD
     z-index: 1;
     color: #fa6547;
     width: 150px;
@@ -65,6 +82,12 @@ h1 {
 .banner__icone svg {
     width: 100%;
     height: 100%;
+=======
+    color: #1e5aa8;
+    font-family: Georgia, serif;
+    font-size: 130px;
+    line-height: 1;
+>>>>>>> af442a4b8463c43e6225361477a0e56fba869814
 }
 
 .botao,
@@ -72,8 +95,13 @@ button {
     display: inline-block;
     padding: 10px 15px;
     border: 0;
+<<<<<<< HEAD
     border-radius: 2px;
     background: #fa6547;
+=======
+    border-radius: 4px;
+    background: #1e5aa8;
+>>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     color: white;
     font: inherit;
     font-size: 13px;
@@ -82,6 +110,7 @@ button {
     cursor: pointer;
 }
 button:hover {
+<<<<<<< HEAD
     background: #e94f36;
     transform: translateY(-2px);
 }
@@ -89,6 +118,15 @@ button:hover {
 button:active {
     background: #d8422b;
     transform: translateY(0);
+=======
+    background: #16457f;
+    transform: scale(0.95);
+}
+
+button:active {
+    background: #16457f;
+    transform: scale(0.92);
+>>>>>>> af442a4b8463c43e6225361477a0e56fba869814
 }
 
 .titulo-secao {
@@ -105,7 +143,11 @@ button:active {
 }
 
 .titulo-secao a {
+<<<<<<< HEAD
     color: #7146d9;
+=======
+    color: #1e5aa8;
+>>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     font-size: 13px;
 }
 
@@ -120,6 +162,7 @@ button:active {
 
 .card-produto {
     overflow: hidden;
+<<<<<<< HEAD
     border: 1px solid #241830;
     border-radius: 3px;
     background: #fffdf8;
@@ -130,6 +173,11 @@ button:active {
 .card-produto:hover {
     transform: translate(-2px, -2px);
     box-shadow: 7px 7px 0 #fa6547;
+=======
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    background: #fff;
+>>>>>>> af442a4b8463c43e6225361477a0e56fba869814
 }
 
 .card-produto__imagem {
@@ -155,8 +203,13 @@ button:active {
     top: 10px;
     left: 10px;
     padding: 5px 7px;
+<<<<<<< HEAD
     background: #7146d9;
     color: #fffdf8;
+=======
+    background: #1e5aa8;
+    color: #fff;
+>>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     font-size: 11px;
 }
 
@@ -165,7 +218,11 @@ button:active {
 }
 
 .card-produto small {
+<<<<<<< HEAD
     color: #918799;
+=======
+    color: #6b7280;
+>>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     font-size: 11px;
     text-transform: uppercase;
 }
@@ -178,14 +235,22 @@ button:active {
 .artista {
     min-height: 34px;
     margin: 0 0 12px;
+<<<<<<< HEAD
     color: #766c7b;
+=======
+    color: #4b5563;
+>>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     font-size: 13px;
 }
 
 .card-produto strong {
     display: block;
     margin-bottom: 12px;
+<<<<<<< HEAD
     color: #7146d9;
+=======
+    color: #1e5aa8;
+>>>>>>> af442a4b8463c43e6225361477a0e56fba869814
 }
 
 .card-produto button {
