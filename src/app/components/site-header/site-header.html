@@ -1,12 +1,7 @@
 <header class="shop-header">
     <div class="header-main">
-<<<<<<< HEAD
         <a class="shop-brand" routerLink="/" aria-label="TPG Discos — início">
             <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/><circle cx="12" cy="12" r="5.5" fill="none" stroke="currentColor" stroke-width=".8"/></svg></span>
-=======
-        <a class="shop-brand" routerLink="/" aria-label="TPG Discos — início" (click)="limparBusca(searchInput)">
-            <span class="brand-mark" aria-hidden="true">♫</span>
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
             <span>TPG <strong>Discos</strong></span>
         </a>
 
@@ -21,20 +16,18 @@
             <button type="submit" aria-label="Buscar">Buscar</button>
         </form>
 
-        <div class="account-links">
-            <a routerLink="/login">Entrar</a>
-            <a class="signup-link" routerLink="/cadastro">Criar conta</a>
+                <div class="account-links">
+            @if (!conta.usuarioAtual()) {
+                <a routerLink="/login">Entrar</a>
+                <a class="signup-link" routerLink="/cadastro">Criar conta</a>
+            }
         </div>
     </div>
 
     <nav class="main-nav" aria-label="Menu principal">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="limparBusca(searchInput)">Início</a>
         <a routerLink="/pesquisa" routerLinkActive="active">Discos</a>
-<<<<<<< HEAD
         <a routerLink="/carrinho" routerLinkActive="active">Carrinho</a>
         <a routerLink="/conta" routerLinkActive="active">Minha conta</a>
-=======
-        <a routerLink="/carrinho" routerLinkActive="active" (click)="limparBusca(searchInput)">Carrinho</a>
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     </nav>
 </header>

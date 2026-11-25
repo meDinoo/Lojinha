@@ -8,6 +8,7 @@ import { Carrinho } from './pages/carrinho/carrinho';
 import { ProdutoDetalhe } from './pages/produto-detalhe/produto-detalhe';
 import { FinalizarPedido } from './pages/finalizar-pedido/finalizar-pedido';
 import { AreaCliente } from './pages/area-cliente/area-cliente';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     { path: '', component: Home },
@@ -17,7 +18,7 @@ export const routes: Routes = [
     { path: 'pesquisa', component: Pesquisa },
     { path: 'carrinho', component: Carrinho },
     { path: 'finalizar-pedido', component: FinalizarPedido },
-    { path: 'conta', component: AreaCliente },
+    { path: 'conta', component: AreaCliente, canActivate: [authGuard] },
     { path: 'produto/:id', component: ProdutoDetalhe },
     { path: '**', redirectTo: '' },
 ];

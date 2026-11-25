@@ -16,17 +16,28 @@ export interface EnderecoEntregaRequest {
 }
 
 export interface CriarPedidoRequest {
-  contato: {
-    nome: string;
-    email: string;
-    telefone: string;
-  };
+  contato: { nome: string; email: string; telefone: string };
   enderecoEntrega: EnderecoEntregaRequest;
   formaPagamento: FormaPagamento;
   itens: ItemPedidoRequest[];
 }
 
-export interface ConfirmacaoPedido {
-  id: string | number;
-  status: string;
+export interface ItemPedidoResposta {
+  produtoId: number;
+  nomeProduto: string;
+  quantidade: number;
+  precoUnitario: number;
+  total: number;
 }
+
+export interface PedidoResposta {
+  id: string;
+  data: string;
+  status: string;
+  itens: ItemPedidoResposta[];
+  subtotal: number;
+  frete: number;
+  total: number;
+}
+
+export type ConfirmacaoPedido = PedidoResposta;

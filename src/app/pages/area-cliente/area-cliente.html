@@ -3,6 +3,7 @@
     <p class="subtitulo">TPG Discos</p>
     <h1>Área do cliente</h1>
     <p>Acompanhe seus pedidos e mantenha seus dados atualizados.</p>
+    <button type="button" (click)="sair()">Sair da conta</button>
   </header>
 
   @if (conta.usuarioAtual(); as usuario) {
@@ -26,11 +27,28 @@
 
     <section class="painel" id="pedidos">
       <div class="painel__titulo"><h2>Meus pedidos</h2><span>Histórico e acompanhamento</span></div>
-      <div class="estado-vazio">
-        <h3>Seus pedidos aparecerão aqui</h3>
-        <p>O histórico e o acompanhamento serão carregados quando a integração com a loja estiver conectada.</p>
-        <a routerLink="/pesquisa">Continuar comprando</a>
-      </div>
+            @if (carregandoPedidos) {
+        <p>Carregando pedidos...</p>
+      } @else if (erroPedidos) {
+        <p role="alert">{{ erroPedidos }}</p>
+      } @else if (pedidos.length) {
+        @for (item of pedidos; track item.id) {
+          <article class="estado-vazio">
+            <h3>Pedido #{{ item.id }}</h3>
+            <p>{{ item.data | date: 'short' }} - {{ item.status }}</p>
+            @for (produto of item.itens; track produto.produtoId) {
+              <p>{{ produto.quantidade }} x {{ produto.nomeProduto }} - {{ produto.total | currency: 'BRL' }}</p>
+            }
+            <strong>Total {{ item.total | currency: 'BRL' }}</strong>
+          </article>
+        }
+      } @else {
+        <div class="estado-vazio">
+          <h3>Voc&#234; ainda n&#227;o fez pedidos</h3>
+          <p>Seus pedidos aparecer&#227;o aqui.</p>
+          <a routerLink="/pesquisa">Continuar comprando</a>
+        </div>
+      }
     </section>
 
     <section class="painel" id="dados">

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LoginManager } from '../../managers/login-manager';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -8,6 +9,7 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './site-header.scss',
 })
 export class SiteHeader {
+  readonly conta = inject(LoginManager);
   constructor(private readonly router: Router) {}
 
   search(query: string, event: Event): void {

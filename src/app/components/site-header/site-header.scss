@@ -4,15 +4,9 @@
 
 .shop-header {
     padding: 0 24px;
-<<<<<<< HEAD
-    background: #f7f3ea;
-    border-bottom: 2px solid #241830;
-    color: #241830;
-=======
     background: #fff;
     border-bottom: 1px solid #e5e7eb;
     color: #111827;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     font-family: Arial, sans-serif;
 }
 
@@ -30,25 +24,15 @@
     display: inline-flex;
     align-items: center;
     gap: 9px;
-<<<<<<< HEAD
-    color: #241830;
-    font-size: 23px;
-    letter-spacing: -0.06em;
-=======
     color: #111827;
     font-size: 22px;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     font-weight: 700;
     text-decoration: none;
     white-space: nowrap;
 }
 
 .shop-brand strong {
-<<<<<<< HEAD
-    color: #7146d9;
-=======
     color: #1e5aa8;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
 }
 
 .brand-mark {
@@ -56,15 +40,9 @@
     height: 34px;
     display: grid;
     place-items: center;
-<<<<<<< HEAD
-    border-radius: 3px;
-    background: #fa6547;
-    color: #fffdf8;
-=======
     border-radius: 50%;
     background: #1e5aa8;
     color: #fff;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     font-size: 20px;
 }
 
@@ -74,13 +52,8 @@
     height: 38px;
     justify-self: center;
     display: flex;
-<<<<<<< HEAD
-    border: 1px solid #d7ccdf;
-    border-radius: 2px;
-=======
     border: 1px solid #cbd5e1;
     border-radius: 4px;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     overflow: hidden;
 }
 
@@ -90,33 +63,20 @@
     padding: 8px 12px;
     border: 0;
     outline: 0;
-<<<<<<< HEAD
-    color: #241830;
-=======
     color: #111827;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     font: inherit;
     font-size: 14px;
 }
 
 .search-form input:focus {
-<<<<<<< HEAD
-    box-shadow: inset 0 0 0 2px #7146d9;
-=======
     box-shadow: inset 0 0 0 2px #1e5aa8;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
 }
 
 .search-form button {
     padding: 0 12px;
     border: 0;
-<<<<<<< HEAD
-    background: #7146d9;
-    color: #fffdf8;
-=======
     background: #1e5aa8;
     color: #fff;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     cursor: pointer;
     font: inherit;
     font-size: 13px;
@@ -135,26 +95,16 @@
 }
 
 .account-links a {
-<<<<<<< HEAD
-    color: #766c7b;
-=======
     color: #374151;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     font-size: 13px;
     text-decoration: none;
 }
 
 .account-links .signup-link {
     padding: 10px 12px;
-<<<<<<< HEAD
-    border-radius: 2px;
-    background: #fa6547;
-    color: #fffdf8;
-=======
     border-radius: 4px;
     background: #1e5aa8;
     color: #fff;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
 }
 
 .main-nav {
@@ -163,21 +113,13 @@
     justify-content: center;
     align-items: center;
     gap: 36px;
-<<<<<<< HEAD
-    border-top: 1px solid #e8dfd3;
-=======
     border-top: 1px solid #e5e7eb;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
 }
 
 .main-nav a {
     padding: 12px 2px 10px;
     border-bottom: 2px solid transparent;
-<<<<<<< HEAD
-    color: #766c7b;
-=======
     color: #374151;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
     font-size: 13px;
     text-decoration: none;
     text-transform: uppercase;
@@ -186,13 +128,8 @@
 
 .main-nav a:hover,
 .main-nav a.active {
-<<<<<<< HEAD
-    border-bottom-color: #7146d9;
-    color: #7146d9;
-=======
     border-bottom-color: #1e5aa8;
     color: #1e5aa8;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
 }
 
 @media (max-width: 680px) {

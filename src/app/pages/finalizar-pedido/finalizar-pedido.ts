@@ -3,7 +3,9 @@ import { Component, inject } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { CarrinhoService } from '../../services/carrinho.service';
-import { CriarPedidoRequest, FormaPagamento } from '../../models/pedido';
+import { PedidoService } from '../../services/pedido.service';
+import { PedidoConfirmacaoService } from '../../services/pedido-confirmacao.service';
+import { CriarPedidoRequest, FormaPagamento, PedidoResposta } from '../../models/pedido';
 
 @Component({
   selector: 'app-finalizar-pedido',
@@ -13,10 +15,13 @@ import { CriarPedidoRequest, FormaPagamento } from '../../models/pedido';
 })
 export class FinalizarPedido {
   private readonly formBuilder = inject(NonNullableFormBuilder);
+  private readonly pedidoService = inject(PedidoService);
+  private readonly confirmacao = inject(PedidoConfirmacaoService);
   readonly carrinho = inject(CarrinhoService);
   readonly frete = 12.9;
-  enviado = false;
-  pedidoPreparado: CriarPedidoRequest | null = null;
+  enviando = false;
+  erroMensagem = '';
+  pedidoConfirmado: PedidoResposta | null = null;
 
   readonly form = this.formBuilder.group({
     nome: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]],
@@ -37,8 +42,7 @@ export class FinalizarPedido {
   }
 
   finalizarPedido(): void {
-    this.enviado = false;
-    this.pedidoPreparado = null;
+    this.erroMensagem = '';
     this.form.patchValue({
       nome: this.form.controls.nome.value.trim(),
       email: this.form.controls.email.value.trim().toLowerCase(),
@@ -54,34 +58,39 @@ export class FinalizarPedido {
       return;
     }
 
-    const dados = this.form.getRawValue();
-    if (!dados.pagamento) {
-      this.form.controls.pagamento.markAsTouched();
-      return;
-    }
-
-    this.pedidoPreparado = {
+    const values = this.form.getRawValue();
+    if (!values.pagamento) return;
+    const request: CriarPedidoRequest = {
       contato: {
-        nome: dados.nome.trim(),
-        email: dados.email.trim().toLowerCase(),
-        telefone: dados.telefone.replace(/\D/g, ''),
+        nome: values.nome.trim(),
+        email: values.email.trim().toLowerCase(),
+        telefone: values.telefone.replace(/\D/g, ''),
       },
       enderecoEntrega: {
-        cep: dados.cep.replace(/\D/g, ''),
-        endereco: dados.endereco.trim(),
-        numero: dados.numero.trim(),
-        complemento: dados.complemento.trim(),
-        bairro: dados.bairro.trim(),
-        cidade: dados.cidade.trim(),
-        estado: dados.estado.trim().toUpperCase(),
+        cep: values.cep.replace(/\D/g, ''),
+        endereco: values.endereco.trim(),
+        numero: values.numero.trim(),
+        complemento: values.complemento.trim(),
+        bairro: values.bairro.trim(),
+        cidade: values.cidade.trim(),
+        estado: values.estado.trim().toUpperCase(),
       },
-      formaPagamento: dados.pagamento,
-      itens: this.carrinho.itens().map((item) => ({
-        produtoId: item.produto.id,
-        quantidade: item.quantidade,
-      })),
+      formaPagamento: values.pagamento,
+      itens: this.carrinho.itens().map(item => ({ produtoId: item.produto.id, quantidade: item.quantidade })),
     };
 
-    this.enviado = true;
+    this.enviando = true;
+    this.pedidoService.criar(request).subscribe({
+      next: response => {
+        this.pedidoConfirmado = response;
+        this.confirmacao.registrarConfirmacao(response);
+        this.carrinho.limpar();
+      },
+      error: error => {
+        this.erroMensagem = error?.error?.mensagem ?? 'N\u00e3o foi poss\u00edvel enviar o pedido. Tente novamente.';
+        this.enviando = false;
+      },
+      complete: () => this.enviando = false,
+    });
   }
 }

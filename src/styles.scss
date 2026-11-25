@@ -10,13 +10,8 @@ html {
   @include mat.theme(
     (
       color: (
-<<<<<<< HEAD
-        primary: mat.$cyan-palette,
-        tertiary: mat.$orange-palette,
-=======
         primary: mat.$blue-palette,
         tertiary: mat.$cyan-palette,
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
       ),
       typography: Roboto,
       density: 0,
@@ -87,13 +82,8 @@ h3 {
   padding: 0 20px;
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
   color: var(--ink);
   background: var(--canvas);
-=======
-  color: #111827;
-  background: #fff;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
   font-family: Arial, sans-serif;
 }
 
@@ -108,40 +98,24 @@ h3 {
 }
 
 .auth-page .brand {
-<<<<<<< HEAD
   color: var(--ink);
-=======
-  color: #111827;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
   text-decoration: none;
   font-size: 22px;
   font-weight: 700;
 }
 
 .auth-page .brand strong {
-<<<<<<< HEAD
   color: var(--brand);
 }
 
 .auth-page .header-link {
   color: var(--muted);
-=======
-  color: #1e5aa8;
-}
-
-.auth-page .header-link {
-  color: #374151;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
   font-size: 13px;
   text-decoration: none;
 }
 
 .auth-page .header-link strong {
-<<<<<<< HEAD
   color: var(--brand);
-=======
-  color: #1e5aa8;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
 }
 
 .auth-page .auth-layout {
@@ -161,11 +135,7 @@ h3 {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 8px;
-<<<<<<< HEAD
-  box-shadow: 0 12px 36px #24183012;
-=======
   box-shadow: 0 5px 18px #1118270d;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
 }
 
 .auth-page .form-heading {
@@ -174,21 +144,13 @@ h3 {
 
 .auth-page .form-heading h2 {
   margin: 0 0 8px;
-<<<<<<< HEAD
   color: var(--ink);
-=======
-  color: #111827;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
   font-size: 25px;
 }
 
 .auth-page .form-heading p,
 .auth-page .switch-prompt {
-<<<<<<< HEAD
   color: var(--muted);
-=======
-  color: #4b5563;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
   font-size: 14px;
   line-height: 1.5;
 }
@@ -210,11 +172,7 @@ h3 {
 
 .auth-page .label-row a,
 .auth-page .switch-prompt a {
-<<<<<<< HEAD
   color: var(--brand);
-=======
-  color: #1e5aa8;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
   font-weight: 600;
   text-decoration: none;
 }
@@ -224,39 +182,22 @@ h3 {
   width: 100%;
   height: 43px;
   padding: 0 11px;
-<<<<<<< HEAD
   border: 1px solid var(--line);
   border-radius: 4px;
   outline: none;
   background: var(--surface);
   color: var(--ink);
-=======
-  border: 1px solid #cbd5e1;
-  border-radius: 4px;
-  outline: none;
-  background: #fff;
-  color: #111827;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
   font: inherit;
   font-size: 14px;
 }
 
 .auth-page .field input::placeholder {
-<<<<<<< HEAD
   color: #84989a;
 }
 
 .auth-page .field input:focus {
   border-color: var(--brand);
   box-shadow: 0 0 0 3px #7146d920;
-=======
-  color: #94a3b8;
-}
-
-.auth-page .field input:focus {
-  border-color: #1e5aa8;
-  box-shadow: 0 0 0 2px #1e5aa820;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
 }
 
 .auth-page .field input[aria-invalid='true'] {
@@ -280,11 +221,7 @@ h3 {
   gap: 8px;
   border: 0;
   border-radius: 4px;
-<<<<<<< HEAD
   background: var(--brand);
-=======
-  background: #1e5aa8;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
   color: #fff;
   cursor: pointer;
   font: 600 14px Arial, sans-serif;
@@ -296,11 +233,7 @@ h3 {
 
 .auth-page .submit-button:focus-visible,
 .auth-page a:focus-visible {
-<<<<<<< HEAD
   outline: 2px solid var(--accent);
-=======
-  outline: 2px solid #3b82f6;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
   outline-offset: 2px;
 }
 
@@ -340,22 +273,14 @@ h3 {
 }
 
 .auth-page .recovery-success p {
-<<<<<<< HEAD
   color: var(--muted);
-=======
-  color: #4b5563;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
   font-size: 13px;
   line-height: 1.6;
 }
 
 .auth-page .page-footer {
   padding: 14px 0;
-<<<<<<< HEAD
   color: var(--muted);
-=======
-  color: #6b7280;
->>>>>>> af442a4b8463c43e6225361477a0e56fba869814
   font-size: 12px;
   text-align: center;
 }

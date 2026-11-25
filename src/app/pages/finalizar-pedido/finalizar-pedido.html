@@ -6,7 +6,14 @@
     <p>Confira seus discos e informe onde podemos entregar.</p>
   </header>
 
-  @if (carrinho.itens().length) {
+  @if (pedidoConfirmado; as pedido) {
+    <section class="checkout__vazio" role="status">
+      <h2>Pedido recebido</h2>
+      <p>Pedido #{{ pedido.id }} - {{ pedido.status }}</p>
+      <p>Total: {{ pedido.total | currency: 'BRL' }}</p>
+      <a routerLink="/pesquisa">Continuar comprando</a>
+    </section>
+  } @else if (carrinho.itens().length) {
     <div class="checkout__layout">
       <form class="checkout__formulario" [formGroup]="form" (ngSubmit)="finalizarPedido()" novalidate>
         <section class="checkout__secao">
@@ -126,17 +133,20 @@
           @if (form.controls.pagamento.touched && form.controls.pagamento.hasError('required')) {
             <p class="erro-campo" role="alert">Selecione uma forma de pagamento.</p>
           }
-          <p class="nota">O pagamento será integrado quando o sistema da loja estiver conectado. Nenhum dado informado aqui é enviado ou salvo.</p>
+          <p class="nota">O pagamento ainda n&#227;o &#233; processado. O pedido registra apenas a forma de pagamento escolhida.</p>
         </section>
 
         @if (form.invalid && form.touched) {
           <p class="mensagem-erro" role="alert">Preencha os campos obrigatórios para continuar.</p>
         }
-        @if (enviado) {
-          <p class="mensagem-info" role="status">Dados validados e preparados para a integração. Nenhum pedido foi enviado ou cobrado.</p>
+        @if (erroMensagem) {
+          <p class="mensagem-erro" role="alert">{{ erroMensagem }}</p>
+        }
+        @if (enviando) {
+          <p class="mensagem-info" role="status">Enviando pedido...</p>
         }
 
-        <button class="botao-finalizar" type="submit">Finalizar pedido</button>
+        <button class="botao-finalizar" type="submit" [disabled]="enviando">Finalizar pedido</button>
       </form>
 
       <aside class="resumo" aria-labelledby="resumo-titulo">
